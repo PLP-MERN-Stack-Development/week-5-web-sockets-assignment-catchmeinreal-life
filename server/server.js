@@ -10,6 +10,9 @@ const path = require('path');
 // Load environment variables
 dotenv.config();
 
+//mongoDb 
+const connectDB = require('./config/db');
+
 // Initialize Express app
 const app = express();
 const server = http.createServer(app);
@@ -124,9 +127,10 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+
+connectDB();
+server.listen(process.env.PORT, () => {
+  console.log(`Server running on port ${process.env.PORT}`);
 });
 
 module.exports = { app, server, io }; 
