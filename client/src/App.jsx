@@ -1,29 +1,21 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  const handleClick = () => {
-    setCount(count + 1)
-  }
-
-  return (
-    <>
-      <div>
-        <MyButton onClick={handleClick} count={count}/>
-        <MyButton onClick={handleClick} count={count}/>
-      </div>
-    </>
-  )
-}
-
-
-function MyButton({count, onClick}) {
 
   
+
   return (
-    <button onClick={onClick}>{count}</button>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<NotFound />}/>
+      </Routes>
+    </Router> 
   )
 }
+
+
 export default App
