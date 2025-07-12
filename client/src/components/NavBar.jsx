@@ -26,8 +26,8 @@ function NavBar() {
                 <li><Link to='/About' replace>About</Link></li>
                 <li><Link to='/Contact' replace>Contact</Link></li>
             </ul>
-            {location.pathname === "/login" ? <Button className="btn" type="signin" children="Sign-In" onclick={goToLogin}/> : null}
-            {location.pathname === "/signin" ? <Button className="btn" type="login" children="Log-In" onclick={goToSignin}/> : null}
+            {location.pathname === "/login" ? <Button className="btn" type="signin" children="Sign-In" onclick={goToSignin}/> : null}
+            {location.pathname === "/signin" ? <Button className="btn" type="login" children="Log-In" onclick={goToLogin}/> : null}
 
             {location.pathname === "/" ? <>
                 <Button className="btn" type="login" children="Log-In" onclick={goToLogin}/>
