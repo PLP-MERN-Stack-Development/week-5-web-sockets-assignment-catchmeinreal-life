@@ -1,0 +1,11 @@
+/* NavBar.jsx css */
+.navBar{
+    display: flex;
+}
+.navList{
+    display: flex;
+    list-style: none;
+}
+.navList li{
+    margin-left: 5px;
+}
